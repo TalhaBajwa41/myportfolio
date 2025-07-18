@@ -121,9 +121,11 @@ const AboutPage = () => {
                 My journey in tech started with a curiosity about how things work, and it evolved into a deep passion for creating solutions that make people's lives easier and more enjoyable.
               </p>
               <div className="flex gap-4">
+                <a href="/services">
                 <button className="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg font-medium hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105 shadow-lg">
                   View My Work
                 </button>
+                </a>
                 <button className="px-6 py-3 border border-purple-500 rounded-lg font-medium hover:bg-purple-500/10 transition-all duration-300">
                   Download CV
                 </button>

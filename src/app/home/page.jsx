@@ -461,12 +461,14 @@ export default function ModernHomepage() {
                 <span className="group-hover:translate-x-1 transition-transform">→</span>
               </span>
             </button>
+            <a href="/contact">
             <button className="group border-2 border-white/30 text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition-all duration-300 hover:scale-105 backdrop-blur-sm">
               <span className="flex items-center justify-center space-x-2">
                 <span>Schedule Call</span>
                 <span className="group-hover:rotate-12 transition-transform">📞</span>
               </span>
             </button>
+            </a>
           </div>
         </div>
       </section>

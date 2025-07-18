@@ -71,8 +71,8 @@ const AnimatedFooter = () => {
       { name: 'Consulting', href: '#' }
     ],
     resources: [
-      { name: 'Blog', href: '#' },
-      { name: 'Documentation', href: '#' },
+      { name: 'Blog', href: 'blog' },
+      { name: 'Documentation', href: 'documentation' },
       { name: 'Help Center', href: '#' },
       { name: 'Privacy Policy', href: '#' }
     ]

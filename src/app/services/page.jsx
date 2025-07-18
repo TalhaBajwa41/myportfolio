@@ -5,9 +5,6 @@ import { Code, Palette, Smartphone, Rocket, ArrowRight, Mail } from "lucide-reac
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
-/* ------------------------------------------------------------------
- * DATA
- * ------------------------------------------------------------------ */
 const services = [
   {
     title: "Web Development",
@@ -61,9 +58,7 @@ const stats = [
   { label: "Countries Served", value: 18 },
 ];
 
-/* ------------------------------------------------------------------
- * HOOKS
- * ------------------------------------------------------------------ */
+
 // Typing Effect for Hero Text
 const useTypingEffect = (text, speed = 100) => {
   const [displayedText, setDisplayedText] = useState("");
