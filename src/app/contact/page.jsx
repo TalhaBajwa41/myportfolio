@@ -15,12 +15,24 @@ export default function ContactPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus("Sending...");
+
     try {
-      // API call simulation (replace with your API endpoint)
-      await new Promise((res) => setTimeout(res, 1500));
-      setStatus("Message Sent ✅");
-      setForm({ name: "", email: "", message: "" });
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      const data = await res.json();
+
+      if (res.ok && data?.success) {
+        setStatus("Message Sent ✅");
+        setForm({ name: "", email: "", message: "" });
+      } else {
+        setStatus(`Error: ${data?.message || "Failed to send"}`);
+      }
     } catch (error) {
+      console.error("Contact form submission error", error);
       setStatus("Error sending message ❌");
     }
   };
@@ -83,8 +95,11 @@ export default function ContactPage() {
           className="bg-gray-800 rounded-2xl p-8 shadow-lg space-y-6"
         >
           <div>
-            <label className="block mb-2 text-gray-300">Name</label>
+            <label htmlFor="name" className="block mb-2 text-gray-300">
+              Name
+            </label>
             <input
+              id="name"
               type="text"
               name="name"
               value={form.name}
@@ -94,8 +109,11 @@ export default function ContactPage() {
             />
           </div>
           <div>
-            <label className="block mb-2 text-gray-300">Email</label>
+            <label htmlFor="email" className="block mb-2 text-gray-300">
+              Email
+            </label>
             <input
+              id="email"
               type="email"
               name="email"
               value={form.email}
@@ -105,13 +123,16 @@ export default function ContactPage() {
             />
           </div>
           <div>
-            <label className="block mb-2 text-gray-300">Message</label>
+            <label htmlFor="message" className="block mb-2 text-gray-300">
+              Message
+            </label>
             <textarea
+              id="message"
               name="message"
               value={form.message}
               onChange={handleChange}
               required
-              rows="5"
+              rows={5}
               className="w-full p-3 rounded-lg bg-gray-900 border border-gray-700 focus:border-blue-500 outline-none"
             />
           </div>
@@ -123,7 +144,11 @@ export default function ContactPage() {
           >
             <Send className="w-5 h-5" /> Send Message
           </motion.button>
-          {status && <p className="text-center mt-4 text-gray-300">{status}</p>}
+          {status && (
+            <p className="text-center mt-4 text-gray-300" role="status">
+              {status}
+            </p>
+          )}
         </motion.form>
       </div>
     </motion.div>
