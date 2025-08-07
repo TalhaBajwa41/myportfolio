@@ -72,15 +72,15 @@ export default function ContactPage() {
           <ul className="space-y-6">
             <li className="flex items-center gap-4">
               <Mail className="w-6 h-6 text-blue-400" />
-              <span>support@mycompany.com</span>
+              <span>talhabajwa1622@gmail.com</span>
             </li>
             <li className="flex items-center gap-4">
               <Phone className="w-6 h-6 text-green-400" />
-              <span>+92 300 1234567</span>
+              <span>+92 3400050708</span>
             </li>
             <li className="flex items-center gap-4">
               <MapPin className="w-6 h-6 text-pink-400" />
-              <span>Lahore, Pakistan</span>
+              <span>FAISLABAD,CLOCK TOWER, Pakistan</span>
             </li>
           </ul>
         </motion.div>
