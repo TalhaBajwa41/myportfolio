@@ -61,20 +61,15 @@ export default function Header() {
   }
 
   function toggleDark() {
-    const next = !darkMode;
-    setDarkMode(next);
-    window.localStorage.setItem("pref-dark", String(next));
-    applyDocumentClasses(next, theme);
-  }
+  console.log('Dark mode toggled:', !darkMode);
+  const next = !darkMode;
+  // ... rest of function
+}
 
-  function cycleTheme() {
-    const idx = THEMES.findIndex((t) => t.id === theme);
-    const nextTheme = THEMES[(idx + 1) % THEMES.length].id;
-    setTheme(nextTheme);
-    window.localStorage.setItem("pref-theme", nextTheme);
-    applyDocumentClasses(darkMode, nextTheme);
-  }
-
+function cycleTheme() {
+  console.log('Theme cycled from:', theme);
+  // ... rest of function
+}
   const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 4);
